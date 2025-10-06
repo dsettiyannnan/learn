@@ -17,7 +17,7 @@ public class MyRestController {
 
 	@GetMapping("/getUserBean")
 	public User getUserBean() {
-		return new User("MyfirstName","MyLastName","Maywood");
+		return new User();
 	}
 	
 }
