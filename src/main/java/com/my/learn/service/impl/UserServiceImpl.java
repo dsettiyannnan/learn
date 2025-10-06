@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.my.learn.dao.UserDAO;
 import com.my.learn.domain.User;
+import com.my.learn.exception.UserNotFoundException;
 import com.my.learn.service.UserService;
 
 @Service
@@ -28,8 +29,12 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	
-	public Optional<User> getUserById(Long Id){
+	public Optional<User> getUserById(Long Id) throws UserNotFoundException {
 		Optional<User> optional=userDAO.findById(Id);
+		
+		if(!optional.isPresent()) {
+			throw new UserNotFoundException("User not found in DB");
+		}
 		
 		return optional;
 	}

@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.my.learn.domain.User;
+import com.my.learn.exception.UserNotFoundException;
 
 
 public interface UserService {
@@ -14,7 +15,7 @@ public interface UserService {
 	
 	public List<User> getAllUser();
 	
-	public Optional<User> getUserById(Long Id);
+	public Optional<User> getUserById(Long Id) throws UserNotFoundException;
 	
 	public void deleteUserById(Long Id);
 
