@@ -7,6 +7,9 @@ import org.springframework.core.io.Resource;
 import org.springframework.web.servlet.resource.ResourceTransformerChain;
 import org.springframework.web.servlet.resource.ResourceTransformerSupport;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -15,6 +18,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Entity
 @Table(name="USR")
+@JsonIgnoreProperties({"firtName","lastName"})
 public class User  {
 	
 	@jakarta.persistence.Id
@@ -34,6 +38,7 @@ public class User  {
 	private String role;
 	
 	@Column(name="SSN", nullable = true, length = 15, unique = true)
+	@JsonIgnore
 	private String ssn;
 	
 	@Column(name="USER_NAME", nullable = false, length = 32, unique = true)
