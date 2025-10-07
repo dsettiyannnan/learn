@@ -113,12 +113,7 @@ public class User  {
 		return "User [firstName=" + firstName + ", lastName=" + lastName + ", city=" + city + ", role=" + role
 				+ ", ssn=" + ssn + ", username=" + username + ", Id=" + id + "]";
 	}
-	@Override
-	public Resource transform(HttpServletRequest request, Resource resource, ResourceTransformerChain transformerChain)
-			throws IOException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	
 		
 
