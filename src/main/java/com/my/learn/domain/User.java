@@ -1,16 +1,21 @@
 package com.my.learn.domain;
 
+import java.io.IOException;
 import java.util.List;
+
+import org.springframework.core.io.Resource;
+import org.springframework.web.servlet.resource.ResourceTransformerChain;
+import org.springframework.web.servlet.resource.ResourceTransformerSupport;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.servlet.http.HttpServletRequest;
 
 @Entity
 @Table(name="USR")
-public class User {
+public class User  {
 	
 	@jakarta.persistence.Id
 	private Long id;
@@ -107,6 +112,12 @@ public class User {
 	public String toString() {
 		return "User [firstName=" + firstName + ", lastName=" + lastName + ", city=" + city + ", role=" + role
 				+ ", ssn=" + ssn + ", username=" + username + ", Id=" + id + "]";
+	}
+	@Override
+	public Resource transform(HttpServletRequest request, Resource resource, ResourceTransformerChain transformerChain)
+			throws IOException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 		

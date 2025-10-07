@@ -1,5 +1,12 @@
 package com.my.learn.domain;
 
+import java.io.IOException;
+
+import org.springframework.core.io.Resource;
+import org.springframework.hateoas.RepresentationModel;
+import org.springframework.web.servlet.resource.ResourceTransformerChain;
+import org.springframework.web.servlet.resource.ResourceTransformerSupport;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
@@ -11,7 +18,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table (name="ORDERS")
-public class Order {
+public class Order  {
 	
 	@Id
 	@GeneratedValue
@@ -50,6 +57,8 @@ public class Order {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	
 	
 	
 
