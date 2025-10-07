@@ -1,8 +1,11 @@
 package com.my.learn.domain;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -31,7 +34,17 @@ public class User {
 	@Column(name="USER_NAME", nullable = false, length = 32, unique = true)
 	private String username;
 	
+	@OneToMany(mappedBy="user")
+	private List<Order> orders;
 	
+	
+	
+	public List<Order> getOrders() {
+		return orders;
+	}
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
