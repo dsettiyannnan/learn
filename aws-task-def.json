@@ -39,7 +39,6 @@
         }
     ],
     "cpu": "1024",
-    "enableFaultInjection": false,
     "executionRoleArn": "arn:aws:iam::037776138262:role/ecsTaskExecutionRole",
     "family": "learn2-task-def",
     "memory": "1024",
