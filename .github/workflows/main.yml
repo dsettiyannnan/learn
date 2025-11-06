@@ -17,8 +17,8 @@ on:
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: 2025learnings/learn           # set this to your Amazon ECR repository name
-  ECS_SERVICE: learn2-task-def-service-h33iinrf                 # set this to your Amazon ECS service name
-  ECS_CLUSTER: learn2                 # set this to your Amazon ECS cluster name
+  ECS_SERVICE: learn2-service                 # set this to your Amazon ECS service name
+  ECS_CLUSTER: ecs-ec2-cluster                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: aws-task-def.json  # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: learn2           # set this to the name of the container in the
