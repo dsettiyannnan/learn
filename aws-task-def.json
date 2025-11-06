@@ -1,7 +1,6 @@
 {
     "compatibilities": [
-        "EC2",
-        "MANAGED_INSTANCES"
+        "EC2"
     ],
     "containerDefinitions": [
         {
@@ -38,20 +37,19 @@
             "volumesFrom": []
         }
     ],
-    "cpu": "1024",
-    "executionRoleArn": "arn:aws:iam::037776138262:role/ecsTaskExecutionRole",
-    "family": "learn2-task-def",
-    "memory": "1024",
+    "family": "service",
     "networkMode": "awsvpc",
-    "placementConstraints": [],
-    "registeredAt": "2025-11-05T18:41:49.402Z",
-    "registeredBy": "arn:aws:iam::037776138262:root",
+    "placementConstraints": [
+        {
+            "expression": "attribute:ecs.availability-zone in [us-east-1a, us-east-1b]",
+            "type": "memberOf"
+        }
+    ],
+    "registeredAt": "2025-11-06T17:34:16.321Z",
+    "registeredBy": "arn:aws:iam::037776138262:user/dhavamani2025learning",
     "requiresAttributes": [
         {
             "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
         },
         {
             "name": "com.amazonaws.ecs.capability.ecr-auth"
@@ -63,7 +61,7 @@
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
         },
         {
-            "name": "ecs.capability.execution-role-ecr-pull"
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
@@ -78,13 +76,14 @@
     "requiresCompatibilities": [
         "EC2"
     ],
-    "revision": 7,
+    "revision": 8,
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
     "status": "ACTIVE",
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:037776138262:task-definition/learn2-task-def:7",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:037776138262:task-definition/service:8",
+    "taskRoleArn": "arn:aws:iam::037776138262:role/ecsTaskExecutionRole",
     "volumes": [],
     "tags": []
 }
